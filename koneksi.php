@@ -2,8 +2,8 @@
 
 $host = "localhost";
 $user = "root";
-$pass = "bismillah";
-$db   =	"unitron_perpusnas";
+$pass = "uni123";
+$db   =	"unique";
 $konek = new mysqli($host,$user,$pass,$db);
 
 if (mysqli_connect_errno()) {
