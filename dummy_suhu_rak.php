@@ -11,3 +11,15 @@ while ($sensor = $query->fetch_array()) {
     $q = $konek->query("insert into trans5 (ID_SENSOR, tgljam, nilai, pesan, koneksi) VALUES ({$sensor['ID_SENSOR']}, NOW(), $nilai, '', 'Y')");
     echo $sensor["PARAMETER"]." ".$sensor["NAMALOKASI"]." ".$sensor["POSISIDETAIL"]." = ".$nilai."\n";
 }
+
+// RAK 2
+$query = $konek->query("select * from sensor where parameter = 'Arus' and posisidetail like 'rak-02'");
+$sensor = $query->fetch_assoc();
+$q = $konek->query("insert into trans5 (ID_SENSOR, tgljam, nilai, pesan, koneksi) VALUES ({$sensor['ID_SENSOR']}, NOW(), 1.1, '', 'Y')");
+echo $sensor["PARAMETER"]." ".$sensor["NAMALOKASI"]." ".$sensor["POSISIDETAIL"]." = 1.1"."\n";
+
+// RAK 3
+$query = $konek->query("select * from sensor where parameter = 'Arus' and posisidetail like 'rak-03'");
+$sensor = $query->fetch_assoc();
+$q = $konek->query("insert into trans5 (ID_SENSOR, tgljam, nilai, pesan, koneksi) VALUES ({$sensor['ID_SENSOR']}, NOW(), 0.3, '', 'Y')");
+echo $sensor["PARAMETER"]." ".$sensor["NAMALOKASI"]." ".$sensor["POSISIDETAIL"]." = 0.3"."\n";
